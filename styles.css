@@ -69,13 +69,13 @@ em { text-shadow:0 0 24px rgba(56,189,248,.25); }.button-primary { color:#03111d
   width:clamp(128px,11vw,158px);
   height:clamp(128px,11vw,158px);
   margin:0 auto 34px;
-  left:-50px;
+  left:0;
   border-width:2px;
   box-shadow:0 0 0 8px rgba(56,189,248,.055),0 0 52px rgba(56,189,248,.2);
 }
 .hero-portrait img {
   object-position:50% 32%;
-  transform:scale(1);
+  transform:translateX(-50px) scale(1.72);
 }
 .animated-name {
   width:fit-content;
@@ -119,8 +119,8 @@ em { text-shadow:0 0 24px rgba(56,189,248,.25); }.button-primary { color:#03111d
   .hero { padding:58px 24px 38px; text-align:center; }
   .hero-copy { margin-inline:auto; }
   .eyebrow { justify-content:center; }
-  .hero-portrait { width:118px; height:118px; margin:0 auto 28px; left:-50px; }
-  .hero-portrait img { object-position:50% 30%; transform:scale(1); }
+  .hero-portrait { width:118px; height:118px; margin:0 auto 28px; left:0; }
+  .hero-portrait img { object-position:50% 30%; transform:translateX(-50px) scale(1.9); }
   .intro { max-width:340px; margin-inline:auto; }
   .hero-actions { justify-content:center; }
   .scroll-note { width:max-content; margin:38px auto 0; transform:none; }
