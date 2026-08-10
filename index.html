@@ -17,6 +17,7 @@
   </head>
   <body>
     <div class="noise" aria-hidden="true"></div>
+    <div class="site-grid" aria-hidden="true"></div>
     <header class="site-header">
       <a class="logo" href="#top" aria-label="Ana sayfa">TY<span>_</span></a>
       <nav class="site-nav" aria-label="Ana navigasyon">
@@ -143,41 +144,7 @@
       </section>
     </main>
     <footer><span>© 2026 TANER YİĞİT</span><span>ISTANBUL, TR</span><a href="#top">YUKARI ↑</a></footer>
-    <div class="cursor-spotlight" aria-hidden="true"></div>
-    <div class="cursor-frames" aria-hidden="true">
-      <span></span><span></span><span></span>
-    </div>
     <script>
-      const spotlight = document.querySelector('.cursor-spotlight');
-      const cursorFrames = [...document.querySelectorAll('.cursor-frames span')];
-      let targetX = -200, targetY = -200, currentX = -200, currentY = -200;
-      let previousX = -200, previousY = -200;
-      const frameState = cursorFrames.map(() => ({ x: -200, y: -200, angle: 0 }));
-      window.addEventListener('pointermove', (event) => {
-        targetX = event.clientX;
-        targetY = event.clientY;
-        document.body.classList.add('cursor-active');
-      });
-      document.documentElement.addEventListener('mouseleave', () => document.body.classList.remove('cursor-active'));
-      function followCursor() {
-        currentX += (targetX - currentX) * 0.14;
-        currentY += (targetY - currentY) * 0.14;
-        spotlight.style.transform = `translate(${currentX}px, ${currentY}px) translate(-50%, -50%)`;
-        const velocityX = targetX - previousX;
-        const velocityY = targetY - previousY;
-        cursorFrames.forEach((frame, index) => {
-          const state = frameState[index];
-          const ease = [0.16, 0.105, 0.072][index];
-          state.x += (targetX - state.x) * ease;
-          state.y += (targetY - state.y) * ease;
-          state.angle += ((velocityX - velocityY) * (index + 1) * 0.08 - state.angle) * 0.06;
-          frame.style.transform = `translate3d(${state.x}px, ${state.y}px, 0) translate(-50%, -50%) rotate(${state.angle + index * 9}deg)`;
-        });
-        previousX = targetX;
-        previousY = targetY;
-        requestAnimationFrame(followCursor);
-      }
-      followCursor();
       const roleText = document.querySelector('#role-text');
       const role = 'IT Destek Uzmanı';
       let roleIndex = 0;
