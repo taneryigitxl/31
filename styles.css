@@ -329,3 +329,38 @@ em { text-shadow:0 0 24px rgba(56,189,248,.25); }.button-primary { color:#03111d
 @media (prefers-reduced-motion:reduce) {
   .expertise .expertise-list article { opacity:1; transform:none; transition:none; }
 }
+
+/* Prominent contact row */
+.contact-details {
+  gap:12px;
+  flex-wrap:wrap;
+  font-size:14px;
+  font-weight:600;
+}
+.contact-details a,
+.contact .availability {
+  min-height:54px;
+  margin:0;
+  padding:0 18px;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  color:var(--text);
+  background:var(--panel-raised);
+  border:1px solid var(--line);
+  border-radius:5px;
+  text-decoration:none;
+  transition:border-color .25s ease,transform .25s ease,box-shadow .25s ease;
+}
+.contact-details a:hover {
+  transform:translateY(-3px);
+  border-color:rgba(56,189,248,.65);
+  box-shadow:0 10px 28px rgba(0,0,0,.25),0 0 20px rgba(56,189,248,.08);
+}
+.contact-icon { font-size:19px; line-height:1; }
+.contact .availability { color:#dff6ff; white-space:nowrap; }
+
+@media (max-width:720px) {
+  .contact-details { align-items:stretch; gap:10px; }
+  .contact-details a,.contact .availability { width:100%; min-height:52px; margin:0; }
+}
