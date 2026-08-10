@@ -364,3 +364,10 @@ em { text-shadow:0 0 24px rgba(56,189,248,.25); }.button-primary { color:#03111d
   .contact-details { align-items:stretch; gap:10px; }
   .contact-details a,.contact .availability { width:100%; min-height:52px; margin:0; }
 }
+
+/* Center the expertise statement independently of its section label */
+@media (min-width:721px) {
+  .expertise .section-heading { position:relative; justify-content:center; }
+  .expertise .section-heading .section-index { position:absolute; top:0; left:0; }
+  .expertise .section-heading h2 { margin-inline:auto; text-align:center; }
+}
