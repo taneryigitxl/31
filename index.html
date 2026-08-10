@@ -70,6 +70,10 @@
           <article><span>02</span><h3>Kullanıcı ve Teknik Destek</h3><p>Kullanıcı ihtiyaçlarına hızlı yanıt veren, takip edilebilir ve çözüm odaklı destek süreçleri.</p></article>
           <article><span>03</span><h3>Ağ ve Sistem Güvenliği</h3><p>TCP/IP, OSI, subnetting, Linux sistem yönetimi ve sanallaştırma teknolojileri.</p></article>
           <article><span>04</span><h3>Uygulama Güvenliği</h3><p>OWASP Top 10, Nmap, Burp Suite ve Metasploit ile temel güvenlik analizi ve test yaklaşımı.</p></article>
+          <article><span>05</span><h3>Adobe Photoshop ve Görsel İçerik Yönetimi</h3><p>Adobe Photoshop ile kurumsal görsel düzenleme, temel tasarım uygulamaları ve dijital içerik optimizasyonu.</p></article>
+          <article><span>06</span><h3>Masaüstü Bilgisayar Bakım ve Onarımı</h3><p>Donanım arıza tespiti, bileşen değişimi, sistem kurulumu ve periyodik bakım süreçlerinin yürütülmesi.</p></article>
+          <article><span>07</span><h3>Dizüstü Bilgisayar Teknik Servis Hizmetleri</h3><p>Dizüstü bilgisayarlarda donanım kontrolü, termal bakım, parça değişimi ve performans sorunlarının giderilmesi.</p></article>
+          <article><span>08</span><h3>Sistem Optimizasyonu ve Yazılım Sadeleştirme</h3><p>İşletim sistemi performansının iyileştirilmesi, gereksiz yazılımların kaldırılması ve güvenli debloat işlemlerinin uygulanması.</p></article>
         </div>
       </section>
 
@@ -151,6 +155,14 @@
         }
       }, { threshold: 0.25 });
       factsObserver.observe(facts);
+      const expertiseList = document.querySelector('.expertise-list');
+      const expertiseObserver = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+          expertiseList.classList.add('is-visible');
+          expertiseObserver.disconnect();
+        }
+      }, { threshold: 0.12 });
+      expertiseObserver.observe(expertiseList);
     </script>
   </body>
 </html>
