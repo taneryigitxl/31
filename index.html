@@ -38,7 +38,6 @@
           <div class="orbit orbit-two"></div>
           <div class="core"><img src="assets/taner-yigit.jpg" alt="Taner Yiğit" /></div>
           <span class="node n1"></span><span class="node n2"></span><span class="node n3"></span><span class="node n4"></span>
-          <p class="visual-label">IT OPERATIONS<br />&amp; SECURITY</p>
         </div>
         <p class="scroll-note">AŞAĞI KAYDIR <span></span></p>
       </section>
@@ -85,13 +84,13 @@
           </article>
           <article class="credential-card">
             <p class="credential-type">EĞİTİM</p>
-            <h3>Bilgisayar ve Bilgi Sistemleri Güvenliği</h3>
+            <h3>Siber Güvenlik</h3>
             <p class="credential-org">İstanbul Kent Üniversitesi</p>
             <div class="credential-meta"><span>Önlisans, 2024 - 2026</span><span>Ağ Güvenliği / Linux / Web Güvenliği</span></div>
           </article>
         </div>
         <article class="award-card">
-          <div class="award-mark">10<span>FF</span></div>
+          <div class="award-mark" role="img" aria-label="Kupa ödülü">🏆</div>
           <div class="award-content">
             <p class="credential-type">ONUR VE ÖDÜL / HAZ 2023</p>
             <h3>Türkiye Klavye Hız Sıralaması Derecesi<br /><em>Top 10 - Advanced Typist</em></h3>
@@ -116,5 +115,22 @@
       </section>
     </main>
     <footer><span>© 2026 TANER YİĞİT</span><span>ISTANBUL, TR</span><a href="#top">YUKARI ↑</a></footer>
+    <div class="cursor-electric" aria-hidden="true"></div>
+    <script>
+      const electric = document.querySelector('.cursor-electric');
+      let lastX = 0, lastY = 0;
+      window.addEventListener('pointermove', (event) => {
+        electric.style.left = `${event.clientX}px`;
+        electric.style.top = `${event.clientY}px`;
+        const distance = Math.hypot(event.clientX - lastX, event.clientY - lastY);
+        if (distance > 8) {
+          electric.classList.remove('is-active');
+          void electric.offsetWidth;
+          electric.classList.add('is-active');
+          lastX = event.clientX;
+          lastY = event.clientY;
+        }
+      });
+    </script>
   </body>
 </html>
