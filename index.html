@@ -46,17 +46,17 @@
         <p class="section-index">01 / HAKKIMDA</p>
         <div class="about-content">
           <h2>Teknolojiyi,<br />iş akışının <em>güvenilir</em><br />parçası haline getiriyorum.</h2>
-          <div class="about-text">
-            <p>İstanbul Nişantaşı Üniversitesi'nde, Teknoloji Destek Hizmetleri Daire Başkanlığı bünyesinde kurumsal IT altyapı, sistem ve ağ desteği operasyonlarında görev alıyorum.</p>
-            <p>Kullanıcı desteği, teknik destek ve sistem takibi başlıklarında; güvenilir, erişilebilir ve sürdürülebilir bir teknoloji deneyimine odaklanıyorum.</p>
-            <a class="text-link" href="https://www.linkedin.com/in/taneryigit/" target="_blank" rel="noreferrer">Profesyonel geçmiş <span>↗</span></a>
+          <div class="bio-facts">
+            <div><span>DOĞUM TARİHİ</span><strong>15.06.2005</strong></div>
+            <div><span>KONUM</span><strong>Kağıthane, İstanbul</strong></div>
+            <div><span>EĞİTİM</span><strong>İstanbul Kent Üniversitesi<br />Siber Güvenlik</strong></div>
+            <a href="https://www.linkedin.com/in/taneryigit/" target="_blank" rel="noreferrer"><span>PROFİL</span><strong>LinkedIn <i>↗</i></strong></a>
           </div>
         </div>
-        <div class="bio-facts">
-          <div><span>DOĞUM TARİHİ</span><strong>15.06.2005</strong></div>
-          <div><span>KONUM</span><strong>Kağıthane, İstanbul</strong></div>
-          <div><span>EĞİTİM</span><strong>İstanbul Kent Üniversitesi<br />Siber Güvenlik</strong></div>
-          <a href="https://www.linkedin.com/in/taneryigit/" target="_blank" rel="noreferrer"><span>PROFİL</span><strong>LinkedIn <i>↗</i></strong></a>
+        <div class="about-text">
+          <p>İstanbul Nişantaşı Üniversitesi'nde, Teknoloji Destek Hizmetleri Daire Başkanlığı bünyesinde kurumsal IT altyapı, sistem ve ağ desteği operasyonlarında görev alıyorum.</p>
+          <p>Kullanıcı desteği, teknik destek ve sistem takibi başlıklarında; güvenilir, erişilebilir ve sürdürülebilir bir teknoloji deneyimine odaklanıyorum.</p>
+          <a class="text-link" href="https://www.linkedin.com/in/taneryigit/" target="_blank" rel="noreferrer">Profesyonel geçmiş <span>↗</span></a>
         </div>
       </section>
 
@@ -143,6 +143,14 @@
           window.setTimeout(() => link.classList.remove('is-clicked'), 520);
         });
       });
+      const facts = document.querySelector('.bio-facts');
+      const factsObserver = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+          facts.classList.add('is-visible');
+          factsObserver.disconnect();
+        }
+      }, { threshold: 0.25 });
+      factsObserver.observe(facts);
     </script>
   </body>
 </html>
