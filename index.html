@@ -19,6 +19,11 @@
     <div class="noise" aria-hidden="true"></div>
     <header class="site-header">
       <a class="logo" href="#top" aria-label="Ana sayfa">TY<span>_</span></a>
+      <nav class="site-nav" aria-label="Ana navigasyon">
+        <a href="#about">Hakkımda</a>
+        <a href="#expertise">Uzmanlık</a>
+        <a href="#contact">İletişim</a>
+      </nav>
       <a class="header-link" href="https://www.linkedin.com/in/taneryigit/" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a>
     </header>
 
@@ -130,6 +135,14 @@
         }
       }
       typeRole();
+      document.querySelectorAll('.site-nav a').forEach((link) => {
+        link.addEventListener('click', () => {
+          link.classList.remove('is-clicked');
+          void link.offsetWidth;
+          link.classList.add('is-clicked');
+          window.setTimeout(() => link.classList.remove('is-clicked'), 520);
+        });
+      });
     </script>
   </body>
 </html>
