@@ -90,25 +90,23 @@ em { text-shadow:0 0 24px rgba(56,189,248,.25); }.button-primary { color:#03111d
 .animated-name span,
 .animated-name em {
   position:relative;
-  background-size:230% 100%;
-  background-position:110% 50%;
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
   transform-origin:50% 100%;
-  animation:nameRevealPro 1.05s cubic-bezier(.16,1,.3,1) forwards,
-            nameLightPro 1.35s cubic-bezier(.16,1,.3,1) forwards;
+  animation:nameRevealPro 1.05s cubic-bezier(.16,1,.3,1) forwards;
 }
 .animated-name span {
-  background-image:linear-gradient(105deg,#f4f7fb 20%,#ffffff 42%,#7dd3fc 50%,#ffffff 58%,#f4f7fb 80%);
-  animation-delay:.24s,1.05s;
+  color:#fff;
+  -webkit-text-fill-color:#fff;
+  text-shadow:0 0 1px rgba(255,255,255,.55);
+  animation-delay:.24s;
 }
 .animated-name em {
-  background-image:linear-gradient(105deg,#38bdf8 18%,#7dd3fc 38%,#ffffff 50%,#7dd3fc 62%,#38bdf8 82%);
+  color:#38bdf8;
+  -webkit-text-fill-color:#38bdf8;
   padding:.12em .06em .02em;
   margin:-.12em -.06em -.02em;
   overflow:visible;
-  animation-delay:.38s,1.2s;
+  animation:nameRevealPro 1.05s cubic-bezier(.16,1,.3,1) .38s forwards,
+            neonBreath 2.8s ease-in-out 1.45s infinite;
 }
 .animated-role { text-align:center; }
 .intro { max-width:540px; margin:34px auto; }
@@ -120,9 +118,13 @@ em { text-shadow:0 0 24px rgba(56,189,248,.25); }.button-primary { color:#03111d
   58% { opacity:1; filter:blur(0); }
   100% { opacity:1; filter:blur(0); transform:translateY(0) rotateX(0) scale(1); letter-spacing:0; }
 }
-@keyframes nameLightPro {
-  0%,18% { background-position:110% 50%; }
-  100% { background-position:-110% 50%; }
+@keyframes neonBreath {
+  0%,100% {
+    text-shadow:0 0 5px rgba(56,189,248,.55),0 0 16px rgba(56,189,248,.28),0 0 34px rgba(56,189,248,.12);
+  }
+  50% {
+    text-shadow:0 0 8px rgba(186,230,253,.98),0 0 24px rgba(56,189,248,.78),0 0 52px rgba(56,189,248,.46),0 0 82px rgba(14,165,233,.22);
+  }
 }
 
 @media (max-width:720px) {
@@ -137,7 +139,8 @@ em { text-shadow:0 0 24px rgba(56,189,248,.25); }.button-primary { color:#03111d
 }
 
 @media (prefers-reduced-motion:reduce) {
-  .animated-name span,.animated-name em { animation:none; opacity:1; filter:none; transform:none; background-position:50% 50%; }
+  .animated-name span,.animated-name em { animation:none; opacity:1; filter:none; transform:none; }
+  .animated-name em { text-shadow:0 0 8px rgba(186,230,253,.9),0 0 24px rgba(56,189,248,.55); }
 }
 
 /* Animated header shortcuts */
