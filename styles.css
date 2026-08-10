@@ -120,7 +120,7 @@ em { text-shadow:0 0 24px rgba(56,189,248,.25); }.button-primary { color:#03111d
   .hero-copy { margin-inline:auto; }
   .eyebrow { justify-content:center; }
   .hero-portrait { width:118px; height:118px; margin:0 auto 28px; left:0; }
-  .hero-portrait img { object-position:50% 18%; transform:translateX(6px) scale(1.08); }
+  .hero-portrait img { object-position:50% 18%; transform:translateX(-2px) scale(1.12); }
   .intro { max-width:340px; margin-inline:auto; }
   .hero-actions { justify-content:center; }
   .scroll-note { width:max-content; margin:38px auto 0; transform:none; }
